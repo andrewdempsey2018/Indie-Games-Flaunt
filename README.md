@@ -28,11 +28,49 @@ In particular, as part of this section we recommend that you provide a list of U
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
-![](/images/readme_img/wf1_main_scr.png)
+![](/img/readme_img/early_sketch.png)
 
-***Image 1.** Image description*
+***Image XX.** Early design*
 
-![](asd)
+![](/img/readme_img/heroic_features.png)
+
+***Image XX.** Heroic Features*
+
+![](/img/readme_img/main_desktop.png)
+
+***Image XX.** main  page desktop*
+
+![](/img/readme_img/main_mobile.png)
+
+***Image XX.** main page mobile*
+
+![](/img/readme_img/game_dedicated_desktop.png)
+
+***Image XX.** full page view of a game desktop*
+
+![](/img/readme_img/game_dedicated_mobile.png)
+
+***Image XX.** full page view of a game mobile*
+
+![](/img/readme_img/action_desktop.png)
+
+***Image XX.** all games of a particular category desktop*
+
+![](/img/readme_img/action_mobile.png)
+
+***Image XX.** all games of a particular category mobile*
+
+![](/img/readme_img/share_desktop.png)
+
+***Image XX.** share a game desktop*
+
+![](/img/readme_img/share_mobile.png)
+
+***Image XX.** share a game mobile*
+
+![](/img/readme_img/database_plan.png)
+
+***Image XX.** Database planning*
 
 ## Features
 
