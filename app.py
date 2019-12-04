@@ -6,14 +6,18 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+@app.route("/action")
+def action():
+    return render_template("action.html")
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+@app.route("/puzzle")
+def puzzle():
+    return render_template("puzzle.html")
 
-@app.route("/careers")
-def careers():
-    return render_template("careers.html")
+@app.route("/sports")
+def sports():
+    return render_template("sports.html")
+
+@app.route("/educational")
+def educational():
+    return render_template("educational.html")
