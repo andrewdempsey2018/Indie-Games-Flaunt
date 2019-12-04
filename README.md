@@ -174,3 +174,15 @@ Computer game fonts (free)
 
 Notepad++ https://notepad-plus-plus.org
 
+***
+Tomorrow is a geometric family ranging from a neutral Thin weight to a vibrant contrast-based Black. It is an excellent fit for small sizes and big headlines. Easy to read and hard to forget.
+
+The Tomorrow project is led by Just in Type, a type design foundry based in Brazil. To contribute, see github.com/MonicaRizzolli/Tomorrow
+***
+
+***
+Odibee Sans is a display font project by London-based designer James Barnard. James set out to create his very own one day build (ODB) and completed the entire character set, numbers and the basic glyphs in 24 hours.
+
+To contribute, see github.com/barnard555/odibeesans
+***
+
