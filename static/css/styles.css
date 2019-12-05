@@ -4,6 +4,32 @@
 @import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
 
+/* Hard coded colours based on the NES console palette */
+.nes_colour_pink
+{
+    color: #d800cc;
+}
+
+.nes_colour_lightblue
+{
+    color: #0078f8;
+}
+
+.nes_colour_lightgreen
+{
+    color: #00a800;
+}
+
+.nes_colour_orange
+{
+    color: #f83800;
+}
+
+.nes_colour_turk
+{
+    color: #00e8d8;
+}
+
 /* This class deals with the text used for the main title of the site. Sans Serif is specified as a backup
 in the event that 'Odibee Sans' is unavailable */
 .main_title_text
@@ -16,4 +42,13 @@ in the event that 'Tomorrow' is unavailable */
 .smaller_text
 {
     font-family: 'Tomorrow', sans-serif;
+}
+
+/* styles for the navbar at the top of the page */
+.navbar
+{
+    background-color: #00e8d8;
+    border-color: #00e8d8;
+	font-size: large;
+	font-weight: bold;
 }

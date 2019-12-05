@@ -23,7 +23,8 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <!-- DELETE --<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">-->
     <div class="container">
       <a class="navbar-brand" href="#">IGF ICON (home)</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,12 +56,13 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
-      <h1 class="display-3 main_title_text">Indie Games Flaunt</h1>
-      <p class="lead smaller_text">A website dedicated to the indie games scene where developers can collaborate & share with the community</p>
-      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+      <h1 class="display-3 main_title_text nes_colour_pink">Indie Games Flaunt</h1>
+      <p class="lead smaller_text nes_colour_lightblue">A website dedicated to the indie games scene where developers can collaborate & share with the community</p>
+	  <a href="#" class="btn btn-primary btn-lg nes_colour_turk">Random Game</a>
+      <a href="#" class="btn btn-primary btn-lg">Share a game</a>
     </header>
 
-{% block stuff %}{% endblock %}
+{% block allgames %}{% endblock %}
 
     <!-- Page Features -->
     <div class="row text-center">
@@ -126,7 +128,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">IGF</p>
     </div>
     <!-- /.container -->
   </footer>
