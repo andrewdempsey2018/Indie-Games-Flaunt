@@ -6,16 +6,16 @@ import os
 
 app = Flask(__name__)
 
-#Connect to the database that holds the games information
+# Connect to the database that holds the games information
 
-#app.config["MONGO_DBNAME"] = "indie_flaunt"
+# app.config["MONGO_DBNAME"] = "indie_flaunt"
 
-#note remove this (username&password) and use env variable instead
-
-#app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/indie_flaunt?retryWrites=true&w=majority"
+# note remove this (username&password) and use env variable instead
+# local 15/16 (note!!)
+# app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/indie_flaunt?retryWrites=true&w=majority"
 app.config["MONGO_URI"] = os.environ.get("MONGODB_URI")
 app.config.from_object(Config)
-#make an instance of PyMongo and pass the app in
+# make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
 
 @app.route("/")
