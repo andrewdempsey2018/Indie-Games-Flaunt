@@ -59,7 +59,7 @@
       <h1 class="display-3 main_title_text nes_colour_pink">Indie Games Flaunt</h1>
       <p class="lead smaller_text nes_colour_lightblue">A website dedicated to the indie games scene where developers can collaborate & share with the community</p>
 	  <a href="#" class="btn btn-primary btn-lg nes_colour_turk">Random Game</a>
-      <a href="#" class="btn btn-primary btn-lg">Share a game</a>
+      <a href="{{ url_for('share_game') }}" class="btn btn-primary btn-lg">Share a game</a>
     </header>
 
 {% block allgames %}{% endblock %}

@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 {% block allgames %}
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
+
+<div class="carousel-item active">
+        <img src="https://www.retrogamer.net/wp-content/uploads/2018/02/SS-King-Of-Fighters-2002-Joe-vs-May-Lee.png" class="d-block w-100" alt="...">
+</div>
 {% for game in games %}
-    <div class="carousel-item active">
+<div class="carousel-item">
+		<h2 class="main_title_text nes_colour_pink">{{game.title}}</h2>
+		<h3 class="smaller_text nes_colour_orange">{{game.description}}</h3>
         <img src="{{game.screenshot1}}" class="d-block w-100" alt="...">
-    </div>
+</div>
 {% endfor %}
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
   </div>
 </div>
 

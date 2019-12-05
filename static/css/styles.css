@@ -52,3 +52,9 @@ in the event that 'Tomorrow' is unavailable */
 	font-size: large;
 	font-weight: bold;
 }
+
+/* Style the temporary Carousel */
+.carousel-item
+{
+    transform: scale(0.7);
+}

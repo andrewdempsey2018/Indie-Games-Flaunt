@@ -19,3 +19,7 @@ mongo = PyMongo(app)
 @app.route("/get_games")
 def get_games():
     return render_template("games.html", games = mongo.db.games.find())
+
+@app.route("/share_game")
+def share_game():
+    return render_template("share.html", games = mongo.db.games.find())
