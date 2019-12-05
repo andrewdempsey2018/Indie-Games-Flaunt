@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for
+from config import Config
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -11,7 +12,7 @@ app.config["MONGO_DBNAME"] = "indie_flaunt"
 #note remove this (username&password) and use env variable instead
 
 app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/indie_flaunt?retryWrites=true&w=majority"
-
+app.config.from_object(Config)
 #make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
 
