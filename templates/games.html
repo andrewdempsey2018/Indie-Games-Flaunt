@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block stuff %}
+    {% for game in games %}
+        {{game.title}}
+	    {{game.genre}}
+	    {{game.developer}}
+		{{game.link}}
+	{% endfor %}
+{% endblock %}

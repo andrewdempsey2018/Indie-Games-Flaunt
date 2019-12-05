@@ -44,6 +44,10 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ***Image XX.** main page mobile*
 
+**Dedicated game screen**
+
+Here we see a mock up of what the user will see if they were to click on a particular game. The game's title is displayed in large letters along with a large screenshot.  A textual description of the game is displayed alongside another screenshot. The developers name is provided (this is also a link that points to all of the developers other games). The link to the game is provided at the bottom of the page. Not shown in this wireframe is functioality to share a particular game to a social media feed such as Facebook and Twitter etc.
+
 ![](/img/readme_img/game_dedicated_desktop.png)
 
 ***Image XX.** full page view of a game desktop*
@@ -71,6 +75,14 @@ This section is also where you would share links to any wireframes, mockups, dia
 ![](/img/readme_img/database_plan.png)
 
 ***Image XX.** Database planning*
+
+##Color scheme
+
+Used NES palette for authentic videogame look. Details of number colors, colors work well together etc.. Tried and tested. RGB values obtained in Windows paint and HEX values obtained thereafter.
+
+![](/img/readme_img/palette_nes.png)
+
+***Image XX.** Color palette from the Nintendo Entertainment System*
 
 ## Features
 
@@ -167,6 +179,10 @@ Using Bootstrap & Materialize at the same time, good or bad idea? Should the Mat
 
 Resources:
 
+***
+Pencil prototyping tool
+***
+
 Use TIGSource community to get screenshots / descriptions and links for initial games list (about 5 for each category = 20 or so games.
 Computer game fonts (free)
 
@@ -186,3 +202,6 @@ Odibee Sans is a display font project by London-based designer James Barnard. Ja
 To contribute, see github.com/barnard555/odibeesans
 ***
 
+# TODO
+
+*chack spelling

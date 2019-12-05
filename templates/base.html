@@ -8,17 +8,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Indie Games Flaunt</title>
+  <title>Heroic Features - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for "Heroic Features" template -->
+  <!-- Custom styles for this template -->
   <link href="./static/css/heroic-features.css" rel="stylesheet">
 
-  <!-- additional styles -->
-  <link rel="stylesheet" type="text/css" href="./static/css/styles.css">
-<!-- <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">-->
+  <link href="./static/css/styles.css" rel="stylesheet">
 
 </head>
 
@@ -27,29 +25,25 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#">IGF ICON (home)</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('index') }}">Home
+            <a class="nav-link" href="#">Action
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('action') }}">Action</a>
+            <a class="nav-link" href="#">Puzzle</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('puzzle') }}">Puzzle</a>
+            <a class="nav-link" href="#">Sports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('sports') }}">Sports</a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('get_games') }}">Educational</a>
-			<!-- <a class="nav-link" href="{{ url_for('educational') }}">Educational</a> -->
+            <a class="nav-link" href="#">Educational</a>
           </li>
         </ul>
       </div>
@@ -62,10 +56,11 @@
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">
       <h1 class="display-3 main_title_text">Indie Games Flaunt</h1>
-      <p class="lead smaller_text">Share your indie games here, build a community and collaborate...</p>
-      <a href="#" class="btn btn-primary btn-lg">Random Game</a>
-	  <a href="#" class="btn btn-primary btn-lg">Share a game</a>
+      <p class="lead smaller_text">A website dedicated to the indie games scene where developers can collaborate & share with the community</p>
+      <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
     </header>
+
+{% block stuff %}{% endblock %}
 
     <!-- Page Features -->
     <div class="row text-center">
