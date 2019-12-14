@@ -271,6 +271,7 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
+
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
@@ -280,6 +281,28 @@ In particular, you should provide all details of the differences between the dep
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
 
+## Local deployment / development ##
+
+## Internet Deployment / web hosting ##
+
+do i need IP 0.0.0.0 and PORT 5000?
+
+added gunicorn to python
+
+added gunicord to procfile
+
+(need more info on gunicorn)
+
+commited to github
+
+to deploy to heroku:
+
+created an account with heroku
+created a new heroku app
+
+linked heroku app with github repository
+
+set heroku to automaticall update the app whenever github repositor was updated
 
 ## Credits
 
