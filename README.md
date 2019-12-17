@@ -285,6 +285,12 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Internet Deployment / web hosting ##
 
+**Setting up the database**
+
+full path to db was used during development, env variable was used for deployment to keep database secure.
+
+**more info**
+
 do i need IP 0.0.0.0 and PORT 5000?
 
 added gunicorn to python
@@ -303,6 +309,24 @@ created a new heroku app
 linked heroku app with github repository
 
 set heroku to automaticall update the app whenever github repositor was updated
+
+The Heroku service was used to deploy the website online. An account with Heroku was created using the free tier.
+
+An app was then initialised on Heroku called "indie-games-flaunt". The settings were left at their default values for this app.
+
+A web server was added to the development machines Python setup called gunicorn.
+
+The procfile was created that contained information about the web server.
+
+Add info about Procfile requirements
+
+The requirements.txt file was added. This containes information needed to allow the webserver to know what dependencies the app needs. pip3 flask >require,ents.txt
+
+Make a commit to github. In this case the repository was called Indie-Games-Flaunt. In heroku, in the deployment settings for the indie-games-flaunt app, deployment method was set to link to the Indie-Games-Flaunt repository.
+
+From Heroku, the app can be set to automaticall update whenever a new commit is made, but for development of this app, manual update was selected. This allowed better control for troubleshooting purposes.
+
+Again from the deploy tab in heroku, the app can then be built by pressing the deploy branch button. After the app builds, clicking the open app button will reveal the URL of the website, allowing it to be opened on any device with internet acsess.
 
 ## Credits
 
@@ -346,6 +370,8 @@ Resources:
 
 ***
 Pencil prototyping tool
+
+DJANGO template language, CSS HTML, 
 ***
 
 Use TIGSource community to get screenshots / descriptions and links for initial games list (about 5 for each category = 20 or so games.
@@ -357,7 +383,7 @@ Notepad++ https://notepad-plus-plus.org
 
 ***
 
-***
+***de
 nes palette obtained from here:
 
 http://www.thealmightyguru.com/Games/Hacking/Wiki/index.php/NES_Palette
@@ -376,3 +402,15 @@ To contribute, see github.com/barnard555/odibeesans
 # TODO
 
 *chack spelling
+
+# Project directory structure
+
+__pycache__
+img/readme_img
+static
+templates
+.gitignore
+app.py
+Procfile
+README.md
+requirements.txt
