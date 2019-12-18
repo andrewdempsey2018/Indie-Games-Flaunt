@@ -22,7 +22,7 @@
 
 <body>
 
-  {% block content %} {% endblock %}
+  {% block mainContent %} {% endblock %}
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -54,6 +54,7 @@
   </nav>
 
   <!-- Page Content -->
+{% block jumbo %}
   <div class="container">
 
     <!-- Jumbotron Header -->
@@ -64,12 +65,15 @@
       <a href="{{ url_for('share_game') }}" class="btn btn-primary btn-lg">Share a game</a>
     </header>
 
-{% block allgames %}{% endblock %}
+
 
 <!-- /.row -->
 
   </div>
   <!-- /.container -->
+{% endblock %}
+
+{% block allgames %}{% endblock %}
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
