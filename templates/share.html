@@ -6,8 +6,8 @@
 
 <h1>Share</h1>
 
-<!-- <form action="" method="POST"> -->
-<form>
+<form action="{{ url_for('add_game') }}" method="POST">
+<!-- <form> -->
   <div class="form-group">
     <label for="title">Gamne Title</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="enter game title...">
@@ -44,6 +44,9 @@
   <div class="form-group">
     <label for="screenshot3">Screenshot 3 Link</label>
     <input type="text" class="form-control" id="screenshot3" name="screenshot3" placeholder="link to screenshot 3...">
+  </div>
+  <div>
+  <button class="btn btn-primary" type="submit" name="action">Share!</button>
   </div>
 </form>
 

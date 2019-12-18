@@ -13,11 +13,20 @@ app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongo
 # make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
 
+# get a list of all the games currently in the database
 @app.route("/")
 @app.route("/get_games")
 def get_games():
     return render_template("games.html", games = mongo.db.games.find())
 
+# open up the share game page
 @app.route("/share_game")
 def share_game():
     return render_template("share.html", games = mongo.db.games.find())
+
+# add a game to the database
+@app.route("/add_game", methods=["POST"])
+def add_game():
+    games2=mongo.db.games
+    games2.insert_one(request.form.to_dict())
+    return redirect(url_for('get_games'))
