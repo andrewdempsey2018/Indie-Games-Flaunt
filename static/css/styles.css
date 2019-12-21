@@ -1,8 +1,20 @@
-/* Additional styles for Indie Games Flaunt website by Andrew Dempsey */
+/* Additional styles for "Indie Games Flaunt" website by Andrew Dempsey */
 
 /* import additional fonts from an external source for use with website */
 @import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+
+/* Define the 5 colours that are used throughout the site globally */
+:root
+{
+    --nesYellow: #ffbe0b;
+    --nesOrange: #fb5607;
+    --nesPink: #ff006e;
+    --nesPurple: #8338ec;
+    --nesBlue: #3a86ff;
+
+/* var(--main-bg-color);  */
+}
 
 /* Hard coded colours based on the NES console palette */
 .nes_colour_pink
@@ -47,7 +59,7 @@ in the event that 'Tomorrow' is unavailable */
 /* styles for the navbar at the top of the page */
 .navbar
 {
-    background-color: #00e8d8;
+    background-color: var(--nesOrange);
     border-color: #00e8d8;
 	font-size: large;
 	font-weight: bold;
