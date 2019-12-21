@@ -62,6 +62,13 @@ in the event that 'Tomorrow' is unavailable */
     color: var(--nesOrange);
 }
 
+/* Jumbotron styling */
+.jumbotron
+{
+    /* linear-gradient property allows for nice color effects */
+    background: linear-gradient(var(--nesPurple), var(--nesBlue));
+}
+
 /* Style the temporary Carousel */
 .carousel-item
 {
