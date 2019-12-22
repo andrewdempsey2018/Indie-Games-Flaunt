@@ -24,6 +24,11 @@ def get_games():
 def share_game():
     return render_template("share.html", games = mongo.db.games.find())
 
+# open up the action games page
+@app.route("/action")
+def action():
+    return render_template("action.html", games = mongo.db.games.find())
+
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
 def add_game():

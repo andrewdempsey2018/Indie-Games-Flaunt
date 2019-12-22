@@ -69,7 +69,7 @@ in the event that 'Tomorrow' is unavailable */
     background: linear-gradient(var(--nesPurple), var(--nesBlue));
 }
 
-/* Style the temporary Carousel */
+/* TEMPORARY Style the temporary Carousel */
 .carousel-item
 {
     transform: scale(0.7);
