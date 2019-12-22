@@ -72,5 +72,5 @@ in the event that 'Tomorrow' is unavailable */
 /* TEMPORARY Style the temporary Carousel */
 .carousel-item
 {
-    transform: scale(0.7);
+    /*transform: scale(0.7);*/
 }
