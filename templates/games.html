@@ -4,20 +4,20 @@
 <div class="container"><!--main container-->
 
 <!--Carousel Wrapper-->
-<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+<div id="multi-item-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-<!--Controls-->
-<div class="controls-top">
-  <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-  <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+<!--Controls top-->
+<div class="controls-top carouselButtonContainer">
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
 </div>
-<!--/.Controls-->
+<!--/.Controls top-->
 
 <!--Indicators-->
 <ol class="carousel-indicators">
-  <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-  <li data-target="#multi-item-example" data-slide-to="1"></li>
-  <li data-target="#multi-item-example" data-slide-to="2"></li>
+  <li data-target="#multi-item-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#multi-item-carousel" data-slide-to="1"></li>
+  <li data-target="#multi-item-carousel" data-slide-to="2"></li>
 </ol>
 <!--/.Indicators-->
 
@@ -38,7 +38,7 @@
     <img class="card-img-top" src="{{ games.screenshot1 }}" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">{{ games.title }}</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Some quick carousel text to build on the card title and make up the bulk of the card's content.</p>
     <a class="btn btn-primary">More Info</a>
   </div>
   </div>
@@ -50,6 +50,13 @@
 
 </div><!--/Carousel Wrapper-->
 </div><!--/Slides-->
+
+<!--Controls bottom-->
+<div class="controls-top carouselButtonContainer">
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+</div>
+<!--/.Controls bottom-->
 
 </div><!--/main container-->
 {% endblock %}
