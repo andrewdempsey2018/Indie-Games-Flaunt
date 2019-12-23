@@ -6,13 +6,42 @@
 
 <!-- "game" is a single entry from the database that the use has chosen -->
 
-<h2>{{ game.title }}</h2>
-<h2>{{ game.genre }}</h2>
-<h2>{{ game.developer }}</h2>
-<p>{{ game.link }}</p>
-<p>{{ game.description }}</p>
+<div class="container">
+
+<div class="row">
+<h4 class="main_title_text">{{ game.title }}</h4>
+</div>
+
+<div class="row">
 <img src="{{ game.screenshot1 }}" alt="asdf">
+</div>
+
+<div class="row">
+<div class="col-sm">
+<h4 class="smaller_text">Genre: {{ game.genre }}</h4>
+</div>
+<div class="col-sm">
+<h4 class="smaller_text">Developer: {{ game.developer }}</h4>
+</div>
+</div>
+
+<div class="row">
+<a href="{{ game.link }}">Play {{ game.title }}</a>
+</div>
+
+<div class="row">
+<h4 class="smaller_text">{{ game.description }}</h4>
+</div>
+
+<div class="row">
+<div class="col-sm">
 <img src="{{ game.screenshot2 }}" alt="asdf">
+</div>
+<div class="col-sm">
 <img src="{{ game.screenshot3 }}" alt="asdf">
+</div>
+</div>
+
+</div>
 
 {% endblock %}
