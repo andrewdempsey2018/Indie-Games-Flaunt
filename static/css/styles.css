@@ -69,8 +69,8 @@ in the event that 'Tomorrow' is unavailable */
     background: linear-gradient(var(--nesPurple), var(--nesBlue));
 }
 
-/* TEMPORARY Style the temporary Carousel */
-.carousel-item
+.card-img-top
 {
-    /*transform: scale(0.7);*/
+    width:10px;
+    height:10px;
 }
