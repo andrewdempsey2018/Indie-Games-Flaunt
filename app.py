@@ -36,6 +36,11 @@ def dedicated():
     gameName = request.args.get('gameName', None)
     return render_template("dedicated.html", game = mongo.db.games.find_one({ 'title': gameName }))
 
+@app.route("/edit")
+def edit():
+    gameName = request.args.get('gameName', None)
+    return render_template("edit.html", game = mongo.db.games.find_one({ 'title': gameName }))
+
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
 def add_game():
