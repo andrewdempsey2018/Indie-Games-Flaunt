@@ -30,10 +30,11 @@ def action():
     return render_template("action.html", games = mongo.db.games.find())
 
 # open up the dedicated game page (page that features one game in full)
+# gameName was passed from games.html. We search our database and pick this one game, then pass it to "dedicated.html"
 @app.route("/dedicated")
 def dedicated():
     gameName = request.args.get('gameName', None)
-    return render_template("dedicated.html", games = mongo.db.games.find_one({ 'title': gameName }))
+    return render_template("dedicated.html", game = mongo.db.games.find_one({ 'title': gameName }))
 
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
