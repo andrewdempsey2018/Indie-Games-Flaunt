@@ -35,10 +35,10 @@
 {% for games in game %}
   <div class="col-md-4">
   <div class="card mb-2">
-    <img class="card-img-top" src="{{ games.screenshot1 }}" alt="Card image cap">
+    <img class="card-img-top" src="{{ games.screenshot1 }}" alt="{{ games.title }}">
   <div class="card-body">
     <h4 class="card-title">{{ games.title }}</h4>
-    <p class="card-text">Some quick carousel text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{ games.shortDescription }}</p>
     <!-- pass the game title to a variable, we need to process it in app.py-->
     <a class="btn btn-primary" href="{{ url_for('dedicated', gameName=games.title) }}">More Info</a>
   </div>
