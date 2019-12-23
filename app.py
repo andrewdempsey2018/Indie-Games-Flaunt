@@ -29,6 +29,12 @@ def share_game():
 def action():
     return render_template("action.html", games = mongo.db.games.find())
 
+# open up the dedicated game page (page that features one game in full)
+@app.route("/dedicated")
+def dedicated():
+    gameName = request.args.get('gameName', None)
+    return render_template("dedicated.html", games = mongo.db.games.find_one({ 'title': gameName }))
+
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
 def add_game():
