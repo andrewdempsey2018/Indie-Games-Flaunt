@@ -302,7 +302,7 @@ The following steps were taken to deploy the website online.
 
 ***
 
-Git quick links
+**Git quick links**
 
 …or create a new repository on the command line
 
@@ -321,5 +321,23 @@ git push -u origin master
 …or import code from another repository
 
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+***
+
+**DB Info**
+
+IGF_DB
+
+app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority
+
+IGF_COLL
+
+***
+
+Heroku Info
+
+igf
+
+https://igf.herokuapp.com/
 
 ***
