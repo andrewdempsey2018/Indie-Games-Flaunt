@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block allgames %}
+
+<div class="container"><!--main container-->
+
+<!--Carousel Wrapper-->
+<div id="multi-item-carousel" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+<!--Controls top-->
+<div class="controls-top carouselButtonContainer">
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+</div>
+<!--/.Controls top-->
+
+<!--Indicators-->
+<ol class="carousel-indicators">
+  <li data-target="#multi-item-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#multi-item-carousel" data-slide-to="1"></li>
+  <li data-target="#multi-item-carousel" data-slide-to="2"></li>
+</ol>
+<!--/.Indicators-->
+
+<!--Slides-->
+<div class="carousel-inner" role="listbox">
+
+{% for game in games | batch(3)%}
+{% if loop.index0==0 %}
+<div class="carousel-item active">
+{% else %}
+<div class="carousel-item">
+{% endif %}
+
+<div class="row">
+{% for games in game %}
+  <div class="col-md-4">
+  <div class="card mb-2">
+    <img class="card-img-top" src="{{ games.screenshot1 }}" alt="{{ games.title }}">
+  <div class="card-body">
+    <h4 class="card-title">{{ games.title }}</h4>
+    <p class="card-text">{{ games.shortDescription }}</p>
+    <!-- pass the game title to a variable, we need to process it in app.py-->
+    <a class="btn btn-primary" href="{{ url_for('dedicated', gameName=games.title) }}">More Info</a>
+  </div>
+  </div>
+  </div>
+{% endfor %}
+</div>
+</div>
+{% endfor %}
+
+</div><!--/Carousel Wrapper-->
+</div><!--/Slides-->
+
+<!--Controls bottom-->
+<div class="controls-top carouselButtonContainer">
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+  <a class="btn-floating carouselButton" href="#multi-item-carousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+</div>
+<!--/.Controls bottom-->
+
+</div><!--/main container-->
+{% endblock %}
