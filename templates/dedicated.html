@@ -19,7 +19,8 @@
       <!-- /.col-lg-8 -->
       <div class="col-lg-5">
         <h1 class="font-weight-light">{{ game.title }}</h1>
-        <p>{{ game.description }}</p>
+        <p>Developed by</p>
+        <p>{{ game.developer }}</p>
         <a class="btn btn-primary" href="{{ game.link }}">Play Now!</a>
       </div>
       <!-- /.col-md-4 -->
@@ -29,7 +30,7 @@
     <!-- Call to Action Well -->
     <div class="card text-white bg-secondary my-5 py-4 text-center">
       <div class="card-body">
-        <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+        <p class="text-white m-0">{{ game.developer }}</p>
       </div>
     </div>
 
