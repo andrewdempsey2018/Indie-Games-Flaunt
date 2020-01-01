@@ -347,3 +347,19 @@ igf
 https://igf.herokuapp.com/
 
 ***
+
+add to technologies used
+
+Click==7.0
+dnspython==1.16.0
+Flask==1.1.1
+Flask-PyMongo==2.3.0
+gunicorn==20.0.4
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+pymongo==3.9.0
+Werkzeug==0.16.0
+
+
+***

@@ -7,14 +7,14 @@
 <!-- Page Content -->
 <div class="container">
 
-  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Viewing All Action Games</h1>
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Viewing All Sports Games</h1>
 
   <hr class="mt-2 mb-5">
 
   <div class="row text-center text-lg-left">
 
     {% for game in games %}
-    {% if game.genre=='Action' %}
+    {% if game.genre=='Sports' %}
     <div class="col-lg-3 col-md-4 col-6">
       <a href="{{ url_for('dedicated', gameName=game.title) }}" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="{{ game.screenshot1}}" alt="">

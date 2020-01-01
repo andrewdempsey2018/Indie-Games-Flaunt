@@ -29,6 +29,19 @@ def share_game():
 def action():
     return render_template("action.html", games = mongo.db.IGF_COLL.find())
 
+# action / sports / puzzle / educational pages seperated should be one page - issue with duplicate code
+@app.route("/sports")
+def sports():
+    return render_template("sports.html", games = mongo.db.IGF_COLL.find())
+
+@app.route("/educational")
+def educational():
+    return render_template("educational.html", games = mongo.db.IGF_COLL.find())
+
+@app.route("/puzzle")
+def puzzle():
+    return render_template("puzzle.html", games = mongo.db.IGF_COLL.find())
+
 # open up the dedicated game page (page that features one game in full)
 # gameName was passed from games.html. We search our database and pick this one game, then pass it to "dedicated.html"
 @app.route("/dedicated")
