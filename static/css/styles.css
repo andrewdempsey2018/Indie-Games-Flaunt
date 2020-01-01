@@ -101,7 +101,9 @@ in the event that 'Tomorrow' is unavailable */
 	font-weight: bold;
 }
 
+/* Styles for the dedicated game page */
+
 .description_area
 {
-    color: var(--nesPink);
+    /* color: var(--nesPink); */
 }

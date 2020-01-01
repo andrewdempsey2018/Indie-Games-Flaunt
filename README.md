@@ -183,61 +183,67 @@ Features Left to Implement
 
 *need to test what happens if two games with the same name are entered
 
-Technologies Used
+# Technologies Used #
 
-Font Awesome
+## Font Awesome ##
 
 Font Awesome is linked via CDN to provide the icons used throughout the website. The "fort" icon (https://fontawesome.com/icons/fort-awesome?style=brands) looks similar to the iconic castle in the Super Mario Bros. franchise. This was chosen as the home button as it fit the theme of the website very well.
 
 Font Awesome link:
 
-https://fontawesome.com
+[https://fontawesome.com](https://fontawesome.com)
 
-Coolors
+## Coolors ##
 
 Coolors is a color scheme generator that outputs a five colour palette of complementary colors based on some initial inputs. The output contains information on the RGB and hex values used in the palette.
 
 Coolors link:
 
-https://coolors.co/
+[https://coolors.co/](https://coolors.co/)
 
-Pencil
+## Pencil ##
 
 The Pencil prototyping tool was used to create the wireframes seen in this document.
 
 Pencil link:
 
-https://pencil.evolus.vn/
+[https://pencil.evolus.vn/](https://pencil.evolus.vn/)
 
-Computer languages
+## Computer languages ##
 
 Django, HTML, CSS, Javascript, Python, Markdown.
 
-Git & GitHub
+## Git & GitHub ##
 
 Used for version control.
 
 GitHub link:
 
-https://github.com
+[https://github.com](https://github.com)
 
-Heroic Features
+## Heroic Features ##
 
-Bootstrap template used for the main page layout.
+Bootstrap template used for the main page layout by Start Bootstrap.
 
 Heroic Features link:
 
-https://startbootstrap.com/templates/heroic-features/ by XXX
+[https://startbootstrap.com/templates/heroic-features/](https://startbootstrap.com/templates/heroic-features/)
 
-Notepad++
+## Small Business ##
+
+Bootstrap template used for the dedicated game page layout by Start Bootstrap.
+
+[https://startbootstrap.com/templates/small-business/](https://startbootstrap.com/templates/small-business/)
+
+## Notepad++ ##
 
 Text editing software used for all coding tasks.
 
 Notepad++ link:
 
-https://notepad-plus-plus.org
+[https://notepad-plus-plus.org](https://notepad-plus-plus.org)
 
-Tomorrow font
+## Tomorrow font ##
 
 Described by its creator as:
 
@@ -245,15 +251,15 @@ Described by its creator as:
 
 Tomorrow link:
 
-https://github.com/MonicaRizzolli/Tomorrow
+[https://github.com/MonicaRizzolli/Tomorrow](https://github.com/MonicaRizzolli/Tomorrow)
 
-Odibee Sans font
+## Odibee Sans font ##
 
 Odibee Sans link:
 
-github.com/barnard555/odibeesans
+[github.com/barnard555/odibeesans](github.com/barnard555/odibeesans)
 
-Testing
+# Testing #
 
 The website was tested on various devices with a number of different screen sizes and operating systems. The website was found to be well responsive in all tests.
 
