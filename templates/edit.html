@@ -4,21 +4,19 @@
 
 {% block jumbo %}{% endblock %} <!-- exclude the jumbotron from the share page -->
 
-<h1>Edit {{ game.title }}</h1>
-
 <div class="container">
 
-<h3 class="smaller_text">Change the details and click edit to update the game listing</h3>
+<h3 class="smaller_text">Edit the games details below and click the edit button</h3>
 
 <form action="{{ url_for('add_game') }}" method="POST">
 <!-- <form> -->
   <div class="form-group">
     <label for="title">Game Title</label>
-    <input type="text" class="form-control" id="title" name="title" value="{{ game.title }}">
+    <input type="text" class="form-control" id="title" name="title" placeholder="enter game title...">
   </div>
   <div class="form-group">
     <label for="genre">Genre</label>
-    <select class="form-control" id="genre" name="genre" value="{{ game.genre }}">
+    <select class="form-control" id="genre" name="genre">
       <option>Action</option>
       <option>Puzzle</option>
       <option>Sports</option>
@@ -27,31 +25,31 @@
   </div>
   <div class="form-group">
     <label for="developer">Developer</label>
-    <input type="text" class="form-control" id="developer" name="developer" value="{{ game.developer }}">
+    <input type="text" class="form-control" id="developer" name="developer" placeholder="enter developer name...">
   </div>
   <div class="form-group">
     <label for="link">Link</label>
-    <input type="text" class="form-control" id="link" name="link" value="{{ game.link }}">
+    <input type="text" class="form-control" id="link" name="link" placeholder="enter game link...">
   </div>
   <div class="form-group">
     <label for="shortDescription">Short Description</label>
-    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2" value="{{ game.shortDescription }}"></textarea>
+    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2"></textarea>
   </div>
   <div class="form-group">
     <label for="description">Long Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"  value="{{ game.description }}"></textarea>
+    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
   </div>
   <div class="form-group">
     <label for="screenshot1">Screenshot 1 Link</label>
-    <input type="text" class="form-control" id="screenshot1" name="screenshot1" value="{{ game.screenshot1 }}">
+    <input type="text" class="form-control" id="screenshot1" name="screenshot1" placeholder="link to screenshot 1...">
   </div>
   <div class="form-group">
     <label for="screenshot2">Screenshot 2 Link</label>
-    <input type="text" class="form-control" id="screenshot2" name="screenshot2" value="{{ game.screenshot2 }}">
+    <input type="text" class="form-control" id="screenshot2" name="screenshot2" placeholder="link to screenshot 2...">
   </div>
   <div class="form-group">
     <label for="screenshot3">Screenshot 3 Link</label>
-    <input type="text" class="form-control" id="screenshot3" name="screenshot3" value="{{ game.screenshot3 }}">
+    <input type="text" class="form-control" id="screenshot3" name="screenshot3" placeholder="link to screenshot 3...">
   </div>
   <div>
   <button class="btn btn-primary" type="submit" name="action">Edit</button>
