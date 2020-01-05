@@ -58,7 +58,7 @@ def dedicated():
 # Edit task
 @app.route("/edit/<game_id>")
 def edit(game_id):
-    the_game=mongo.db.IGF_COLL.find_one({"_id": ObjectId(game_id)})
+    the_game=mongo.db.IGF_COLL.find_one({'_id': ObjectId(game_id)})
     return render_template("edit.html", game=the_game);
 
 # add a game to the database

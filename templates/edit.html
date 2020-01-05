@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<h3 class="smaller_text">Edit the games details below and click the edit button</h3>
+<h3 class="smaller_text">Edit details then click edit</h3>
 
 <form action="{{ url_for('add_game') }}" method="POST">
 <!-- <form> -->
@@ -17,39 +17,60 @@
   <div class="form-group">
     <label for="genre">Genre</label>
     <select class="form-control" id="genre" name="genre">
+
+	  {% if game.genre=='Action' %}
+      <option selected>Action</option>
+      {% else %}
       <option>Action</option>
+      {% endif %}
+
+      {% if game.genre=='Puzzle' %}
+      <option selected>Puzzle</option>
+      {% else %}
       <option>Puzzle</option>
+      {% endif %}
+
+      {% if game.genre=='Sports' %}
+      <option selected>Sports</option>
+      {% else %}
       <option>Sports</option>
+      {% endif %}
+
+      {% if game.genre=='Educational' %}
+      <option selected>Educational</option>
+      {% else %}
       <option>Educational</option>
+      {% endif %}
     </select>
+
   </div>
   <div class="form-group">
     <label for="developer">Developer</label>
-    <input type="text" class="form-control" id="developer" name="developer" placeholder="enter developer name...">
+    <input type="text" class="form-control" id="developer" name="developer" value="{{ game.developer }}">
   </div>
   <div class="form-group">
     <label for="link">Link</label>
-    <input type="text" class="form-control" id="link" name="link" placeholder="enter game link...">
+    <input type="text" class="form-control" id="link" name="link" value="{{ game.link }}">
   </div>
   <div class="form-group">
     <label for="shortDescription">Short Description</label>
-    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2"></textarea>
+    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2">{{ game.shortDescription }}</textarea>
   </div>
   <div class="form-group">
     <label for="description">Long Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    <textarea class="form-control" id="description" name="description" rows="3">{{ game.description }}</textarea>
   </div>
   <div class="form-group">
     <label for="screenshot1">Screenshot 1 Link</label>
-    <input type="text" class="form-control" id="screenshot1" name="screenshot1" placeholder="link to screenshot 1...">
+    <input type="text" class="form-control" id="screenshot1" name="screenshot1" value="{{ game.screenshot1 }}">
   </div>
   <div class="form-group">
     <label for="screenshot2">Screenshot 2 Link</label>
-    <input type="text" class="form-control" id="screenshot2" name="screenshot2" placeholder="link to screenshot 2...">
+    <input type="text" class="form-control" id="screenshot2" name="screenshot2" value="{{ game.screenshot2 }}">
   </div>
   <div class="form-group">
     <label for="screenshot3">Screenshot 3 Link</label>
-    <input type="text" class="form-control" id="screenshot3" name="screenshot3" placeholder="link to screenshot 3...">
+    <input type="text" class="form-control" id="screenshot3" name="screenshot3" value="{{ game.screenshot3 }}">
   </div>
   <div>
   <button class="btn btn-primary" type="submit" name="action">Edit</button>
