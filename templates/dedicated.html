@@ -21,7 +21,7 @@
         <h1 class="font-weight-light main_title_text">{{ game.title }}</h1>
         <p> By {{ game.developer }}</p>
         <a class="btn btn-primary" target="_blank" href="{{ game.link }}">Play Now!</a>
-        <a class="btn btn-primary" href="{{ url_for('edit', game_id=game._id) }}">Edit</a>
+        <a class="btn btn-primary" href="{{ url_for('edit', gameId=game._id) }}">Edit</a>
       </div>
       <!-- /.col-md-4 -->
     </div>
