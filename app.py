@@ -46,8 +46,8 @@ def puzzle():
 # gameName was passed from games.html. We search our database and pick this one game, then pass it to "dedicated.html"
 @app.route("/dedicated")
 def dedicated():
-    gameName = request.args.get('gameName', None)
-    return render_template("dedicated.html", game = mongo.db.IGF_COLL.find_one({ 'title': gameName }))
+    gameId = request.args.get('gameId', None)
+    return render_template("dedicated.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
 #old edit task code
 #@app.route("/edit")
