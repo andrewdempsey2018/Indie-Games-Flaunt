@@ -8,7 +8,7 @@
 
 <h3 class="smaller_text">Edit details then click edit</h3>
 
-<form action="{{ url_for('add_game') }}" method="POST">
+<form action="{{ url_for('update_game', gameId=game._id) }}" method="POST">
 <!-- <form> -->
   <div class="form-group">
     <label for="title">Game Title</label>

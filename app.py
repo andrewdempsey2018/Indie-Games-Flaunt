@@ -61,6 +61,24 @@ def edit():
     gameId=request.args.get('gameId', None)
     return render_template("edit.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
+@app.route('/update_game', methods=["POST"])
+def update_game():
+    gameId=request.args.get('gameId', None)
+    games = mongo.db.IGF_COLL
+    games.update( {'_id': ObjectId(gameId)},
+    {
+        'title':request.form.get('title'),
+        'genre':request.form.get('genre'),
+        'developer':request.form.get('developer'),
+        'link': request.form.get('link'),
+        'shortDescription':request.form.get('shortDescription'),
+        'description':request.form.get('description'),
+        'screenshot1':request.form.get('screenshot1'),
+        'screenshot2':request.form.get('screenshot2'),
+        'screenshot3':request.form.get('screenshot3')
+    })
+    return redirect(url_for('get_games'))
+
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
 def add_game():
