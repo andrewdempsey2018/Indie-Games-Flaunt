@@ -4,13 +4,11 @@
 
 {% block jumbo %}{% endblock %} <!-- exclude the jumbotron from the share page -->
 
-<h1>Edit {{ game.title }}</h1>
-
 <div class="container">
 
-<h3 class="smaller_text">Change the details and click edit to update the game listing</h3>
+<h3 class="smaller_text">Edit details then click edit</h3>
 
-<form action="{{ url_for('add_game') }}" method="POST">
+<form action="{{ url_for('update_game', gameId=game._id) }}" method="POST">
 <!-- <form> -->
   <div class="form-group">
     <label for="title">Game Title</label>
@@ -18,12 +16,33 @@
   </div>
   <div class="form-group">
     <label for="genre">Genre</label>
-    <select class="form-control" id="genre" name="genre" value="{{ game.genre }}">
+    <select class="form-control" id="genre" name="genre">
+
+	  {% if game.genre=='Action' %}
+      <option selected>Action</option>
+      {% else %}
       <option>Action</option>
+      {% endif %}
+
+      {% if game.genre=='Puzzle' %}
+      <option selected>Puzzle</option>
+      {% else %}
       <option>Puzzle</option>
+      {% endif %}
+
+      {% if game.genre=='Sports' %}
+      <option selected>Sports</option>
+      {% else %}
       <option>Sports</option>
+      {% endif %}
+
+      {% if game.genre=='Educational' %}
+      <option selected>Educational</option>
+      {% else %}
       <option>Educational</option>
+      {% endif %}
     </select>
+
   </div>
   <div class="form-group">
     <label for="developer">Developer</label>
@@ -35,11 +54,11 @@
   </div>
   <div class="form-group">
     <label for="shortDescription">Short Description</label>
-    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2" value="{{ game.shortDescription }}"></textarea>
+    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2">{{ game.shortDescription }}</textarea>
   </div>
   <div class="form-group">
     <label for="description">Long Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"  value="{{ game.description }}"></textarea>
+    <textarea class="form-control" id="description" name="description" rows="3">{{ game.description }}</textarea>
   </div>
   <div class="form-group">
     <label for="screenshot1">Screenshot 1 Link</label>

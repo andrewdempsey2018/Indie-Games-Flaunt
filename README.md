@@ -183,61 +183,67 @@ Features Left to Implement
 
 *need to test what happens if two games with the same name are entered
 
-Technologies Used
+# Technologies Used #
 
-Font Awesome
+## Font Awesome ##
 
 Font Awesome is linked via CDN to provide the icons used throughout the website. The "fort" icon (https://fontawesome.com/icons/fort-awesome?style=brands) looks similar to the iconic castle in the Super Mario Bros. franchise. This was chosen as the home button as it fit the theme of the website very well.
 
 Font Awesome link:
 
-https://fontawesome.com
+[https://fontawesome.com](https://fontawesome.com)
 
-Coolors
+## Coolors ##
 
 Coolors is a color scheme generator that outputs a five colour palette of complementary colors based on some initial inputs. The output contains information on the RGB and hex values used in the palette.
 
 Coolors link:
 
-https://coolors.co/
+[https://coolors.co/](https://coolors.co/)
 
-Pencil
+## Pencil ##
 
 The Pencil prototyping tool was used to create the wireframes seen in this document.
 
 Pencil link:
 
-https://pencil.evolus.vn/
+[https://pencil.evolus.vn/](https://pencil.evolus.vn/)
 
-Computer languages
+## Computer languages ##
 
 Django, HTML, CSS, Javascript, Python, Markdown.
 
-Git & GitHub
+## Git & GitHub ##
 
 Used for version control.
 
 GitHub link:
 
-https://github.com
+[https://github.com](https://github.com)
 
-Heroic Features
+## Heroic Features ##
 
-Bootstrap template used for the main page layout.
+Bootstrap template used for the main page layout by Start Bootstrap.
 
 Heroic Features link:
 
-https://startbootstrap.com/templates/heroic-features/ by XXX
+[https://startbootstrap.com/templates/heroic-features/](https://startbootstrap.com/templates/heroic-features/)
 
-Notepad++
+## Small Business ##
+
+Bootstrap template used for the dedicated game page layout by Start Bootstrap.
+
+[https://startbootstrap.com/templates/small-business/](https://startbootstrap.com/templates/small-business/)
+
+## Notepad++ ##
 
 Text editing software used for all coding tasks.
 
 Notepad++ link:
 
-https://notepad-plus-plus.org
+[https://notepad-plus-plus.org](https://notepad-plus-plus.org)
 
-Tomorrow font
+## Tomorrow font ##
 
 Described by its creator as:
 
@@ -245,15 +251,15 @@ Described by its creator as:
 
 Tomorrow link:
 
-https://github.com/MonicaRizzolli/Tomorrow
+[https://github.com/MonicaRizzolli/Tomorrow](https://github.com/MonicaRizzolli/Tomorrow)
 
-Odibee Sans font
+## Odibee Sans font ##
 
 Odibee Sans link:
 
-github.com/barnard555/odibeesans
+[github.com/barnard555/odibeesans](github.com/barnard555/odibeesans)
 
-Testing
+# Testing #
 
 The website was tested on various devices with a number of different screen sizes and operating systems. The website was found to be well responsive in all tests.
 
@@ -297,3 +303,63 @@ The following steps were taken to deploy the website online.
 3. The heroku app was linked to the projects GitHub repository.
 
 4. Heroku was set to automatically update with each commit
+
+# Rough work section (to be removed) #
+
+***
+
+**Git quick links**
+
+…or create a new repository on the command line
+
+echo "# IGF" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/andrewdempsey2018/IGF.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/andrewdempsey2018/IGF.git
+git push -u origin master
+
+…or import code from another repository
+
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+***
+
+**DB Info**
+
+IGF_DB
+
+app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority
+
+IGF_COLL
+
+***
+
+Heroku Info
+
+igf
+
+https://igf.herokuapp.com/
+
+***
+
+add to technologies used
+
+Click==7.0
+dnspython==1.16.0
+Flask==1.1.1
+Flask-PyMongo==2.3.0
+gunicorn==20.0.4
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+pymongo==3.9.0
+Werkzeug==0.16.0
+
+
+***

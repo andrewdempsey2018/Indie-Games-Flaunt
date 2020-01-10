@@ -5,10 +5,10 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 # Connect to the database that holds the games information
-app.config["MONGO_DBNAME"] = "indie_flaunt"
+app.config["MONGO_DBNAME"] = "IGF_DB"
 
 # note remove this (username&password) and use env variable instead
-app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/indie_flaunt?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority"
 
 # make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
@@ -17,33 +17,71 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_games")
 def get_games():
-    return render_template("games.html", games = mongo.db.games.find())
+    return render_template("games.html", games = mongo.db.IGF_COLL.find())
 
 # open up the share game page
 @app.route("/share_game")
 def share_game():
-    return render_template("share.html", games = mongo.db.games.find())
+    return render_template("share.html", games = mongo.db.IGF_COLL.find())
 
 # open up the action games page
 @app.route("/action")
 def action():
-    return render_template("action.html", games = mongo.db.games.find())
+    return render_template("action.html", games = mongo.db.IGF_COLL.find())
+
+# action / sports / puzzle / educational pages seperated should be one page - issue with duplicate code
+@app.route("/sports")
+def sports():
+    return render_template("sports.html", games = mongo.db.IGF_COLL.find())
+
+@app.route("/educational")
+def educational():
+    return render_template("educational.html", games = mongo.db.IGF_COLL.find())
+
+@app.route("/puzzle")
+def puzzle():
+    return render_template("puzzle.html", games = mongo.db.IGF_COLL.find())
 
 # open up the dedicated game page (page that features one game in full)
 # gameName was passed from games.html. We search our database and pick this one game, then pass it to "dedicated.html"
 @app.route("/dedicated")
 def dedicated():
-    gameName = request.args.get('gameName', None)
-    return render_template("dedicated.html", game = mongo.db.games.find_one({ 'title': gameName }))
+    gameId = request.args.get('gameId', None)
+    return render_template("dedicated.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
+#old edit task code
+#@app.route("/edit")
+#def edit():
+#    gameName = request.args.get('gameName', None)
+#    return render_template("edit.html", game = mongo.db.IGF_COLL.find_one({ 'title': gameName }))
+
+# Edit task
 @app.route("/edit")
 def edit():
-    gameName = request.args.get('gameName', None)
-    return render_template("edit.html", game = mongo.db.games.find_one({ 'title': gameName }))
+    gameId=request.args.get('gameId', None)
+    return render_template("edit.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
+
+@app.route('/update_game', methods=["POST"])
+def update_game():
+    gameId=request.args.get('gameId', None)
+    games = mongo.db.IGF_COLL
+    games.update( {'_id': ObjectId(gameId)},
+    {
+        'title':request.form.get('title'),
+        'genre':request.form.get('genre'),
+        'developer':request.form.get('developer'),
+        'link': request.form.get('link'),
+        'shortDescription':request.form.get('shortDescription'),
+        'description':request.form.get('description'),
+        'screenshot1':request.form.get('screenshot1'),
+        'screenshot2':request.form.get('screenshot2'),
+        'screenshot3':request.form.get('screenshot3')
+    })
+    return redirect(url_for('get_games'))
 
 # add a game to the database
 @app.route("/add_game", methods=["POST"])
 def add_game():
-    games2=mongo.db.games
-    games2.insert_one(request.form.to_dict())
+    games=mongo.db.IGF_COLL
+    games.insert_one(request.form.to_dict())
     return redirect(url_for('get_games'))

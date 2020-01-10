@@ -4,46 +4,53 @@
 
 {% block jumbo %}{% endblock %} <!--exclude the jumbotron-->
 
-<!-- "game" is a single entry from the database that the use has chosen -->
+<!-- "game" is a single entry from the database that the user has chosen -->
 
-<div class="container">
+<link href="./static/css/small-business.css" rel="stylesheet">
 
-<div class="row">
-<h4 class="main_title_text">{{ game.title }}</h4>
-</div>
+<!-- Page Content -->
+  <div class="container">
 
-<div class="row">
-<img src="{{ game.screenshot1 }}" alt="asdf">
-</div>
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ game.screenshot1 }}" alt="{{ game.title }} _screenshot 1">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light main_title_text">{{ game.title }}</h1>
+        <p> By {{ game.developer }}</p>
+        <a class="btn btn-primary" target="_blank" href="{{ game.link }}">Play Now!</a>
+        <a class="btn btn-primary" href="{{ url_for('edit', gameId=game._id) }}">Edit</a>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
 
-<div class="row">
-<div class="col-sm">
-<h4 class="smaller_text">Genre: {{ game.genre }}</h4>
-</div>
-<div class="col-sm">
-<h4 class="smaller_text">Developer: {{ game.developer }}</h4>
-</div>
-</div>
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+      <div class="card-body">
+        <p class="text-white m-0">{{ game.description }}</p>
+      </div>
+    </div>
 
-<div class="row">
-<a href="{{ game.link }}">Play {{ game.title }}</a>
-</div>
+    <!-- Content Row -->
+    <div class="row">
 
-<div class="row">
-<h4 class="smaller_text">{{ game.description }}</h4>
-</div>
+      <div class="col-md-6 mb-5">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ game.screenshot2 }}" alt="{{ game.title }} _screenshot 2">
+      </div>
 
-<div class="row">
-<div class="col-sm">
-<img src="{{ game.screenshot2 }}" alt="asdf">
-</div>
-<div class="col-sm">
-<img src="{{ game.screenshot3 }}" alt="asdf">
-</div>
-</div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-6 mb-5">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ game.screenshot3 }}" alt="{{ game.title }} _screenshot 3">
+      </div>
 
-<a class="btn btn-primary" href="{{ url_for('edit', gameName=game.title) }}">Edit</a>
 
-</div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
 
 {% endblock %}

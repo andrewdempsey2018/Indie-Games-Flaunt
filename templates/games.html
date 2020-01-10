@@ -40,7 +40,7 @@
     <h4 class="card-title">{{ games.title }}</h4>
     <p class="card-text">{{ games.shortDescription }}</p>
     <!-- pass the game title to a variable, we need to process it in app.py-->
-    <a class="btn btn-primary" href="{{ url_for('dedicated', gameName=games.title) }}">More Info</a>
+    <a class="btn btn-primary" href="{{ url_for('dedicated', gameId=games._id) }}">More Info</a>
   </div>
   </div>
   </div>

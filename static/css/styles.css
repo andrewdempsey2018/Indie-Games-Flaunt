@@ -12,8 +12,6 @@
     --nesPink: #ff006e;
     --nesPurple: #8338ec;
     --nesBlue: #3a86ff;
-
-/* var(--main-bg-color);  */
 }
 
 /* This class deals with the text used for the main title of the site. Sans Serif is specified as a backup
@@ -101,4 +99,11 @@ in the event that 'Tomorrow' is unavailable */
     font-family: 'Tomorrow', sans-serif;
     font-size: large;
 	font-weight: bold;
+}
+
+/* Styles for the dedicated game page */
+
+.description_area
+{
+    /* color: var(--nesPink); */
 }
