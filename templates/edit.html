@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block mainContent %}
+
+{% block jumbo %}{% endblock %} <!-- exclude the jumbotron from the share page -->
+
+<h1>Edit {{ game.title }}</h1>
+
+<div class="container">
+
+<h3 class="smaller_text">Change the details and click edit to update the game listing</h3>
+
+<form action="{{ url_for('add_game') }}" method="POST">
+<!-- <form> -->
+  <div class="form-group">
+    <label for="title">Game Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="{{ game.title }}">
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <select class="form-control" id="genre" name="genre" value="{{ game.genre }}">
+      <option>Action</option>
+      <option>Puzzle</option>
+      <option>Sports</option>
+      <option>Educational</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="developer">Developer</label>
+    <input type="text" class="form-control" id="developer" name="developer" value="{{ game.developer }}">
+  </div>
+  <div class="form-group">
+    <label for="link">Link</label>
+    <input type="text" class="form-control" id="link" name="link" value="{{ game.link }}">
+  </div>
+  <div class="form-group">
+    <label for="shortDescription">Short Description</label>
+    <textarea class="form-control" id="shortDescription" name="shortDescription" rows="2" value="{{ game.shortDescription }}"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="description">Long Description</label>
+    <textarea class="form-control" id="description" name="description" rows="3"  value="{{ game.description }}"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="screenshot1">Screenshot 1 Link</label>
+    <input type="text" class="form-control" id="screenshot1" name="screenshot1" value="{{ game.screenshot1 }}">
+  </div>
+  <div class="form-group">
+    <label for="screenshot2">Screenshot 2 Link</label>
+    <input type="text" class="form-control" id="screenshot2" name="screenshot2" value="{{ game.screenshot2 }}">
+  </div>
+  <div class="form-group">
+    <label for="screenshot3">Screenshot 3 Link</label>
+    <input type="text" class="form-control" id="screenshot3" name="screenshot3" value="{{ game.screenshot3 }}">
+  </div>
+  <div>
+  <button class="btn btn-primary" type="submit" name="action">Edit</button>
+  </div>
+</form>
+
+</div>
+
+{% endblock %}

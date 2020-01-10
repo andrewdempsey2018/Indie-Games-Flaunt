@@ -1,0 +1,104 @@
+/* Additional styles for "Indie Games Flaunt" website by Andrew Dempsey */
+
+/* import additional fonts from an external source for use with website */
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+
+/* Define the 5 colours that are used throughout the site globally */
+:root
+{
+    --nesYellow: #ffbe0b;
+    --nesOrange: #fb5607;
+    --nesPink: #ff006e;
+    --nesPurple: #8338ec;
+    --nesBlue: #3a86ff;
+
+/* var(--main-bg-color);  */
+}
+
+/* This class deals with the text used for the main title of the site. Sans Serif is specified as a backup
+in the event that 'Odibee Sans' is unavailable */
+.main_title_text
+{
+    font-family: 'Odibee Sans', sans-serif;
+    color: var(--nesYellow);
+}
+
+/* This class deals with the smaller text used throughout the site. Sans Serif is specified as a backup
+in the event that 'Tomorrow' is unavailable */
+.smaller_text
+{
+    font-family: 'Tomorrow', sans-serif;
+    color: var(--nesYellow);
+}
+
+/* styles for the navbar at the top of the page */
+.navbar
+{
+    background-color: var(--nesOrange);
+    /*border-color: var(--nesYellow);*/
+	font-size: large;
+	font-weight: bold;
+}
+
+.navbar-brand
+{
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.fa /* The home icon */
+{
+    color: var(--nesYellow);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav-link
+{
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.navbar-toggler
+{
+    background-color: var(--nesYellow);
+    color: var(--nesOrange);
+}
+
+/* Jumbotron styling */
+.jumbotron
+{
+    /* linear-gradient property allows for nice color effects */
+    background: linear-gradient(var(--nesPurple), var(--nesBlue));
+}
+
+.jumbotronButton
+{
+    background-color: var(--nesOrange);
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif
+}
+
+/* Carousel */
+.carouselButtonContainer
+{
+    text-align:center;
+}
+
+.carouselButton
+{
+    margin:auto;
+    font-size: xx-large;
+	font-weight: bold;
+}
+
+/* Footer */
+.pageFooter
+{
+    background-color: var(--nesPurple);
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif;
+    font-size: large;
+	font-weight: bold;
+}
