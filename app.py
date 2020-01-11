@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+# ObjectId to cast identifiers to the correct format for Mongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
@@ -49,12 +50,6 @@ def dedicated():
     gameId = request.args.get('gameId', None)
     return render_template("dedicated.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
-#old edit task code
-#@app.route("/edit")
-#def edit():
-#    gameName = request.args.get('gameName', None)
-#    return render_template("edit.html", game = mongo.db.IGF_COLL.find_one({ 'title': gameName }))
-
 # Edit task
 @app.route("/edit")
 def edit():
@@ -78,6 +73,12 @@ def update_game():
         'screenshot3':request.form.get('screenshot3')
     })
     return redirect(url_for('get_games'))
+
+@app.route("/delete_game")
+def delete_game():
+    gameId=request.args.get("gameId", None)
+    mongo.db.IGF_COLL.remove({ "_id": ObjectId(gameId) })
+    return redirect(url_for("get_games"))
 
 # add a game to the database
 @app.route("/add_game", methods=["POST"])

@@ -183,6 +183,8 @@ Features Left to Implement
 
 *need to test what happens if two games with the same name are entered
 
+*Currently, the category pages are seperate HTML files for each of the four categories, these could be refactored into one page to cut down on the source code size.
+
 # Technologies Used #
 
 ## Font Awesome ##
