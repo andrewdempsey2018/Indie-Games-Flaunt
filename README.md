@@ -11,9 +11,11 @@ Indie Games Flaunt is a website developed with two main purposes:
 
 *Indie game* - a video game, commonly created by an individual or a small team without the support of a video game publisher.
 
-## The problem & solution##
+**The problem**
 
 Indie games are mostly found on dedicated websites that cater to the needs of developers as opposed to casual users. These sites (usually forums) are aimed at computer savvy individuals and as such can be off putting to more casual users - the interfaces can be difficult to navigate and can be difficult to use on mobile devices. These forum site are also quite fractured - many different websites to share indie games results in some games going undiscovered or at the very least, having a very limited audience.
+
+**Proposed solution**
 
 This website aims to be a central location where all of the latest indie game releases can be shared by both developers and players. Using this website, developers can be confident that their game will reach the largest audience and players can be confident that they have access to all of the latest releases as well as having access to all of the older releases. The website should be responsive so as to work on as many devices as possible - meaning the largest audience as possible can be targeted.
 
@@ -26,7 +28,7 @@ This website aims to be a central location where all of the latest indie game re
 
 **Site owners goal**
 
-Promote indie game development by providing a website where developers have access to a large audience of casual game players. Provide entertainment to casual game players as well as indie game fans by providing them with information on all of the latest indie games.
+Promote indie game development by providing a website where developers have access to a large audience of casual game players. Provide entertainment to casual game players as well as indie game fans by providing them with information such as links and screenshots for all of the latest games as well as previously released games.
 
 ## User stories ##
 

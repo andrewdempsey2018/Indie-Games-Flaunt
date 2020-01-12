@@ -34,7 +34,7 @@ in the event that 'Tomorrow' is unavailable */
 .navbar
 {
     background-color: var(--nesPurple);
-    /*border-color: var(--nesYellow);*/
+    border-color: var(--nesYellow);
 	font-size: large;
 	font-weight: bold;
 }
@@ -47,23 +47,49 @@ in the event that 'Tomorrow' is unavailable */
 	font-weight: bold;
 }
 
+.navbar-brand:hover
+{
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif;
+    font-size: x-large;
+	font-weight: bold;
+    text-decoration: underline;
+}
+
 .fa /* The home icon */
 {
     color: var(--nesYellow);
     padding-left: 20px;
     padding-right: 20px;
+    font-size: x-large;
+}
+
+.fa:hover
+{
+    color: var(--nesYellow);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: xx-large;
 }
 
 .nav-link
 {
     color: var(--nesYellow);
     font-family: 'Tomorrow', sans-serif;
+    font-size: x-large;
 }
 
-.navbar-toggler
+.nav-link:hover
+{
+    color: var(--nesYellow);
+    font-family: 'Tomorrow', sans-serif;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.navbar-toggler-icon
 {
     background-color: var(--nesYellow);
-    color: var(--nesOrange);
 }
 
 /* Jumbotron styling */
@@ -112,13 +138,6 @@ in the event that 'Tomorrow' is unavailable */
 .smediaIcon
 {
     font-size: x-large;
-}
-
-/* Styles for the dedicated game page */
-
-.description_area
-{
-    /* color: var(--nesPink); */
 }
 
 /* Styling for the edit game page */
