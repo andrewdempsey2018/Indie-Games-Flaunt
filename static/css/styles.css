@@ -99,6 +99,7 @@ in the event that 'Tomorrow' is unavailable */
     font-family: 'Tomorrow', sans-serif;
     font-size: large;
 	font-weight: bold;
+    text-align: center;
 }
 
 /* Styles for the dedicated game page */
