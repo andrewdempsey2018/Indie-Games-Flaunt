@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 # ObjectId to cast identifiers to the correct format for Mongo
 from bson.objectid import ObjectId
+# needed for implementation of random game feature
+from random import randint
 
 app = Flask(__name__)
 
@@ -74,6 +76,7 @@ def update_game():
     })
     return redirect(url_for('get_games'))
 
+# used gameId passed from "dedicated" game page. Call the remove menthod then redirect to main page
 @app.route("/delete_game")
 def delete_game():
     gameId=request.args.get("gameId", None)
@@ -86,3 +89,14 @@ def add_game():
     games=mongo.db.IGF_COLL
     games.insert_one(request.form.to_dict())
     return redirect(url_for('get_games'))
+
+# random --add comment--
+@app.route("/random_game")
+def random_game():
+    #generate a random number between 0 and the number of documents in the database
+    #subtract 1 from the number of documents to prevent index bounds issues
+    random_number = randint(0, (mongo.db.IGF_COLL.count() - 1))
+    selected_game=mongo.db.IGF_COLL.find()[random_number]
+    return render_template("dedicated.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(selected_game["_id"]) }))
+
+#for x in mycol.find({},{ "_id": 0, "name": 1, "address": 1 }):

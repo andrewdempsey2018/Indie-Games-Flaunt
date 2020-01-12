@@ -1,2 +1,3 @@
 *.bat
 *.lnk
+__pycache__/
