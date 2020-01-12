@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+
+#for accessing the databse uri from Heroku
 import os
 
 #ObjectId to cast identifiers to the correct format for Mongo
@@ -13,9 +15,6 @@ app = Flask(__name__)
 #connect to the database using heroku env variable
 app.config["MONGO_DBNAME"] = "IGF_DB"
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-
-#delete this line, change password and uncomment above line before final deployment
-#app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority"
 
 #make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
@@ -70,7 +69,10 @@ def edit():
     gameId=request.args.get('gameId', None)
     return render_template("edit.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
-
+#Takes the modified database fields 'title', 'genre', 'developer', 'link',
+#'shortDescription', 'description', 'screenshot1', 'screenshot2', 'screenshot3'
+#that are passed from the 'edit' page and inserts them back into the database
+#uses the MongoDB method update()
 @app.route('/update_game', methods=["POST"])
 def update_game():
     gameId=request.args.get('gameId', None)
@@ -89,21 +91,27 @@ def update_game():
     })
     return redirect(url_for('get_games'))
 
-#used gameId passed from "dedicated" game page. Call the remove menthod then redirect to main page
+#When the user clicks delete on a games page, the games "_id" attribute is
+#passed here into the gameId variable. The MongoDB function remove() uses the
+#remove() function with the gameId as the argument. This completely removes the
+#specified data from the database.
 @app.route("/delete_game")
 def delete_game():
     gameId=request.args.get("gameId", None)
     mongo.db.IGF_COLL.remove({ "_id": ObjectId(gameId) })
     return redirect(url_for("get_games"))
 
-#add a game to the database
+#Takes the form input from 'share' page and uses the inser_one()
+#method to put the data into the database. The data is inserted in the form of
+#a document with a unique '_id' attribute. The user is then redirected to the home page.
 @app.route("/add_game", methods=["POST"])
 def add_game():
     games=mongo.db.IGF_COLL
     games.insert_one(request.form.to_dict())
     return redirect(url_for('get_games'))
 
-#random --add comment--
+#The home page features a button where the user can be directed to information about a
+#randomly selected game.
 @app.route("/random_game")
 def random_game():
     #generate a random number between 0 and the number of documents in the database

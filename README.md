@@ -1,6 +1,9 @@
 # Indie Games Flaunt #
 
-A website where indie game developers can share their games.
+Indie Games Flaunt is a website developed with two main purposes:
+
+1. To provide a central location where indie game developers can share their games.
+2. To provide a central location where indie game fans and casual gamers can find the latest indie games as well as older releases.
 
 ## Terms ##
 
@@ -8,18 +11,22 @@ A website where indie game developers can share their games.
 
 *Indie game* - a video game, commonly created by an individual or a small team without the support of a video game publisher.
 
-Indie games are mostly found on dedicated websites that cater to the needs of developers as opposed to casual users. These sites (usually forums) are aimed at computer savvy individuals and as such can be off putting to more casual users - the interfaces can be difficult to navigate and can be difficult to use on mobile devices. This website attempts to give developers a place to share their games whilst at the same time catering to casual gamers. The user interface is designed to be easy to navigate on mobile as well as desktop computers. 
- 
+## The problem & solution##
+
+Indie games are mostly found on dedicated websites that cater to the needs of developers as opposed to casual users. These sites (usually forums) are aimed at computer savvy individuals and as such can be off putting to more casual users - the interfaces can be difficult to navigate and can be difficult to use on mobile devices. These forum site are also quite fractured - many different websites to share indie games results in some games going undiscovered or at the very least, having a very limited audience.
+
+This website aims to be a central location where all of the latest indie game releases can be shared by both developers and players. Using this website, developers can be confident that their game will reach the largest audience and players can be confident that they have access to all of the latest releases as well as having access to all of the older releases. The website should be responsive so as to work on as many devices as possible - meaning the largest audience as possible can be targeted.
+
 ## UX ##
 
-**External users goal:**
-A casual game player can browse the site and download a game they wish to play.
+**External user goals**
 
-**External users goal:**
-A game developer can share their game.
+1. A casual game player can browse the site and download a game they wish to play.
+2. A game developer can share their game.
 
-**Site owners goal:**
-Promote indie game development by providing a website where developers have access to a large audience of casual game players as well as indie developers themselves.
+**Site owners goal**
+
+Promote indie game development by providing a website where developers have access to a large audience of casual game players. Provide entertainment to casual game players as well as indie game fans by providing them with information on all of the latest indie games.
 
 ## User stories ##
 
@@ -41,7 +48,7 @@ Below we see an early mock up of the design on a desktop computer. Note the larg
 
 Image 1. Early design
 
-A Bootstrap template was select, titled "Heroic Features". It appears to have much of the intended layout goals already implemented out of the box such as the nav bar and standout, easy to read text.
+A Bootstrap template was selected, titled "Heroic Features". It appears to have much of the intended layout goals already implemented out of the box such as the nav bar, bold text and responsiveness.
 
 ![](img/readme_img/heroic_features.png)
 
@@ -59,7 +66,7 @@ Below we see the main page as it should look from a smartphone.
 
 Image 4. Wireframe of the main page as seen on a smartphone
 
-Dedicated game screen
+**Dedicated game screen**
 
 Here we see a mock up of what the user will see if they were to click on a particular game. The game's title is displayed in large letters along with a large screenshot.  A textual description of the game is displayed alongside another screenshot. The developers name is provided (this is also a link that points to all of the developers other games). The link to the game is provided at the bottom of the page. Not shown in this wireframe is functionality to share a particular game to a social media feeds such as Facebook and Twitter etc.
 
@@ -97,6 +104,8 @@ Below we see the same functionality except this time on a mobile device.
 
 Image 10. Share a game mobile
 
+## Database design and implementation ##
+
 Below we see a plan of what data will need to be held by the database.
 
 ![](img/readme_img/database_plan.png)
@@ -116,6 +125,12 @@ Long description (text): A full description of the game which is viewable when t
 Link (text): A link to the game. This could either be a link to a web based game or a direct download link.
 
 Screenshot 1,2,3 (text): A url to an image of the game.
+
+**Database setup**
+
+1. An account was created on [https://cloud.mongodb.com](https://cloud.mongodb.com)
+2. A database was created called `IGF_DB` (short for Indie Games Flaunt database)
+3. 
 
 Theme
 
@@ -186,6 +201,10 @@ Features Left to Implement
 *Currently, the category pages are seperate HTML files for each of the four categories, these could be refactored into one page to cut down on the source code size.
 
 # Technologies Used #
+
+**Flask**
+
+**Gunicorn**
 
 ## Font Awesome ##
 
@@ -265,15 +284,33 @@ Odibee Sans link:
 
 The website was tested on various devices with a number of different screen sizes and operating systems. The website was found to be well responsive in all tests.
 
-Other tests
+**Other tests**
+
+**Test 1 - Action link**
 
 1. Go to the main page.
 2. Click the "Action" link in the navbar.
 3. The user should be directed to a page containing a list of all the games that are stored under the category "action".
 
+**Test 2 - Puzzle link**
+
 1. Go to the main page.
 2. Click the "Puzzle" link in the navbar.
 3. The user should be directed to a page containing a list of all the games that are stored under the category "puzzle".
+
+**Test 2 - Sports link**
+
+1. Go to the main page.
+2. Click the "Sports" link in the navbar.
+3. The user should be directed to a page containing a list of all the games that are stored under the category "sports".
+
+**Test 2 - Educational link**
+
+1. Go to the main page.
+2. Click the "Educational" link in the navbar.
+3. The user should be directed to a page containing a list of all the games that are stored under the category "educational".
+
+**Test 3 - Random button**
 
 1. Go to the main page.
 2. Click the "Random" button.
@@ -282,86 +319,106 @@ Other tests
 5. Again click the random button.
 6. The user should be again directed to a page containing all of the details of another game stored in the database.
 
+**Test 4 - Share button**
+
 1. Go to the main page.
 2. Click the "Share" button.
 3. The user should be directed to the "share.html" page.
 4. Click the "home" button.
 5. The user should be directed to the main page and no information should have been added to the database.
 
+**Test 5 - Sharing a game**
+
 1. Go to the main page.
 2. Click the "Share" button.
 3. The user should be directed to the "share.html" page.
 4. Enter the details of a game.
-5. The user should be directed to the main page and the game details submitted should now be visible on the main page.
+5. Click the share button.
+6. The user should be directed to the main page and the game details submitted should now be visible on the main page.
+7. Click the category of game entered in step 4 on the navbar.
+8. The game that was entered should now be visible on the bottom of the list in the category page.
 
-Deployment
+**Test 6 - Deleting a game**
 
-The following steps were taken to deploy the website online.
+1. Select a game from the main page.
+2. Click the delete button.
+3. The user should be directed to the main page. From here, confirm that the game delted in the previous step has in fact been deleted.
+4. The game should not be available for viewing.
+
+**Test X - Navigation**
+
+1. Go to the main page
+2. Click the link on the navbar entitles 'Action'
+3. The user should be redirected to the page that contains all of the games in the Action category
+4. Click the Home icon on the navbar
+5. The user should be redirected to the main page once again
+6. Click the link on the navbar entitles 'Puzzle'
+7. The user should be redirected to the page that contains all of the games in the Puzzle category
+
+**Test 7 - Editing a game (no changes made)**
+
+**Test 8 - Editing a game (changes made)**
+
+**Tests 8, 9, 10 - Social media links**
+
+**Test 11 - Responsivness**
+
+**Test 12, 13 - Feedback**
+
+1. Go to the main page.
+2. Hover the mouse over the links in the navbar, the social media links in the footer as well as the buttons in the jumbotron.
+3. All of these elements should respond to the users hover. The links should grow larger whilst hovered over and the buttons should change colour whilst hovered over.
+
+**Test 14 - User experience**
+
+This test involved the participation of volunteers. The aim was to determine if the user interface was intuitive to a casual user.
+
+The first volunteer was asked to navigate to the Action category using an IPhone. They were then to select one game and attempt to play that game. The user was able to cayy out these tasks with ease.
+
+The second user was asked to select a random game by using the random button on the main page using a desktop computer. They were then asked to edit the title of that game by using the edit button. The user completed the task with relative ease but did  report that the text on the edit screen was hard to read. This test resulted in the darkening of text on the edit screen.
+
+**Test X - Entering games with identical names**
+
+It is not uncommon in the indie games scene for two or more games to share the same name. This test was designed to ensure the website would be able to handle such a situation.
+
+1. Go to the main page
+2. Click the share game button
+3. Enter the following details
+
+    "Title: Elephant Quest
+    
+    Developer: ArmorGames
+    
+    Genre: Action
+    
+    Link: https://elephant quest.com
+    
+    Short description: Super fun action platformer
+    
+    Description: Fast paced action game where the user controls an elephant that can fire laser cannons. Save the other elephants by shooting enemies and collecting powerups. Arrow Keys/WASD to move, mouse to shoot.
+    
+    Screenshots 1, 2 & 3: https://imgur.com/el1.jpg, https://imgur.com/el2.jpg, https://imgur.com/el3.jpg"
+
+4. Repeat step 3 but enter a developer named `"other developer"`
+5. Navigate to the "Action" category page.
+6. The two games should be visible.
+7. Click on each game and ensure they show that they were developed by different developers.
+
+**Deployment (web)**
+
+The following steps were taken to deploy the website online:
 
 1. An account was created with Heroku.
-
 2. A new Heroku app was created.
+3. Gunicorn server was installed with the command: `$ pip install gunicorn` See above for more information regarding Gunicorn.
+4. A file named "Procfile" was created containing information about Gunicorn that is needed by Heroku.
+5. The heroku app was linked to the GitHub repository of Indie Games Flaunt.
+6. Heroku was set to automatically update with each commit.
+7. From the MongoDB website under the network access tab, an IP address of 0.0.0.0/0 was entered for the website's database. This IP address is what is known as a whitelist IP meaning that all traffic will be allowed to interact with the database (including Heroku)
+8. An enviornment variable was added to the Heroku app for the website with the key "MONGO_URI". This key contains values that link to the websites database as well as password details. Having the database access restricted to this enviornment variable keeps the data safe.
 
-3. The heroku app was linked to the projects GitHub repository.
+**Deployment (local)**
 
-4. Heroku was set to automatically update with each commit
+In order to deploy this website on a local machine, the following steps would need to be taken:
+1. 
 
-# Rough work section (to be removed) #
-
-***
-
-**Git quick links**
-
-…or create a new repository on the command line
-
-echo "# IGF" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/andrewdempsey2018/IGF.git
-git push -u origin master
-
-…or push an existing repository from the command line
-
-git remote add origin https://github.com/andrewdempsey2018/IGF.git
-git push -u origin master
-
-…or import code from another repository
-
-You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
-
-***
-
-**DB Info**
-
-IGF_DB
-
-app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority
-
-IGF_COLL
-
-***
-
-Heroku Info
-
-igf
-
-https://igf.herokuapp.com/
-
-***
-
-add to technologies used
-
-Click==7.0
-dnspython==1.16.0
-Flask==1.1.1
-Flask-PyMongo==2.3.0
-gunicorn==20.0.4
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-pymongo==3.9.0
-Werkzeug==0.16.0
-
-
-***

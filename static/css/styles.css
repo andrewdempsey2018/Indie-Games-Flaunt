@@ -33,7 +33,7 @@ in the event that 'Tomorrow' is unavailable */
 /* styles for the navbar at the top of the page */
 .navbar
 {
-    background-color: var(--nesOrange);
+    background-color: var(--nesPurple);
     /*border-color: var(--nesYellow);*/
 	font-size: large;
 	font-weight: bold;
@@ -43,6 +43,8 @@ in the event that 'Tomorrow' is unavailable */
 {
     color: var(--nesYellow);
     font-family: 'Tomorrow', sans-serif;
+    font-size: x-large;
+	font-weight: bold;
 }
 
 .fa /* The home icon */
@@ -67,13 +69,12 @@ in the event that 'Tomorrow' is unavailable */
 /* Jumbotron styling */
 .jumbotron
 {
-    /* linear-gradient property allows for nice color effects */
-    background: linear-gradient(var(--nesPurple), var(--nesBlue));
+    background-image: url(jumbo.png);
 }
 
 .jumbotronButton
 {
-    background-color: var(--nesOrange);
+    background-color: var(--nesPurple);
     color: var(--nesYellow);
     font-family: 'Tomorrow', sans-serif
 }
@@ -118,4 +119,26 @@ in the event that 'Tomorrow' is unavailable */
 .description_area
 {
     /* color: var(--nesPink); */
+}
+
+/* Styling for the edit game page */
+.btn-block
+{
+    margin-bottom: 20px;
+}
+
+/* General styles, used throughout the website */
+
+.large_dark_text
+{
+    font-family: 'Odibee Sans', sans-serif;
+    color: var(--nesPurple);
+    font-size: xx-large;
+	padding-top: 20px;
+}
+
+/* Make the forms easier to read for the user by making labels bold */
+form label
+{
+    font-weight:bold;
 }

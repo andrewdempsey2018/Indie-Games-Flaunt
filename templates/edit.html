@@ -6,7 +6,7 @@
 
 <div class="container">
 
-<h3 class="smaller_text">Edit details then click edit</h3>
+<h3 class="large_dark_text">Change details then click the Edit button</h3>
 
 <form action="{{ url_for('update_game', gameId=game._id) }}" method="POST">
 <!-- <form> -->
@@ -73,7 +73,7 @@
     <input type="text" class="form-control" id="screenshot3" name="screenshot3" value="{{ game.screenshot3 }}">
   </div>
   <div>
-  <button class="btn btn-primary" type="submit" name="action">Edit</button>
+  <button class="btn btn-primary btn-lg btn-block" type="submit" name="action">Edit</button>
   </div>
 </form>
 
