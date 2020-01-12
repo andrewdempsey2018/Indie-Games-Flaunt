@@ -102,6 +102,17 @@ in the event that 'Tomorrow' is unavailable */
     text-align: center;
 }
 
+/* Social media links on footer */
+.smediaIcon:hover
+{
+    font-size: xx-large;
+}
+
+.smediaIcon
+{
+    font-size: x-large;
+}
+
 /* Styles for the dedicated game page */
 
 .description_area

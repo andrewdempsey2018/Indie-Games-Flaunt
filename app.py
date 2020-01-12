@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+import os
 
 #ObjectId to cast identifiers to the correct format for Mongo
 from bson.objectid import ObjectId
@@ -9,15 +10,12 @@ from random import randint
 
 app = Flask(__name__)
 
-#Connect to the database that holds the games information
+#connect to the database using heroku env variable
 app.config["MONGO_DBNAME"] = "IGF_DB"
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
-#note remove this (username&password) and use env variable instead
+#delete this line, change password and uncomment above line before final deployment
 #app.config["MONGO_URI"] = "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority"
-
-MONGODB_URI=os.getenv("MONGODB_URI")
-app.config["MONGO_URI"]=MONGODB_URI
-#MONGODB_URI = os.getenv("MONGO_URI", "mongodb+srv://root:r00tUser@andrewcluster-igjjx.mongodb.net/IGF_DB?retryWrites=true&w=majority")
 
 #make an instance of PyMongo and pass the app in
 mongo = PyMongo(app)
@@ -64,11 +62,14 @@ def dedicated():
     gameId = request.args.get('gameId', None)
     return render_template("dedicated.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
 
-#Edit task
+#Allows users to edit a game that is already in the database
+#User clicks a button on the games page, this action passes the games "_id" attribute here
+#"_id" is then passed to the variable "gameId. The database is then searched  for this game
 @app.route("/edit")
 def edit():
     gameId=request.args.get('gameId', None)
     return render_template("edit.html", game=mongo.db.IGF_COLL.find_one({ '_id': ObjectId(gameId) }))
+
 
 @app.route('/update_game', methods=["POST"])
 def update_game():
