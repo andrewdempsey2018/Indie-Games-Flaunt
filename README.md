@@ -114,6 +114,10 @@ Below we see a plan of what data will need to be held by the database.
 
 Image 11. Database planning
 
+**Data types**
+
+The database will be required to hold textual information. The game title, genre, developer and description are all simple text. The link to the game as well as the screenshots are hyperlinks. These will be stored as text be processed accordingly by HTML tags.
+
 Title (text): the games title.
 
 Genre (text): can be either action, puzzle, sports or educational.
@@ -128,85 +132,112 @@ Link (text): A link to the game. This could either be a link to a web based game
 
 Screenshot 1,2,3 (text): A url to an image of the game.
 
-**Database setup**
+**Database setup (development)**
 
 1. An account was created on [https://cloud.mongodb.com](https://cloud.mongodb.com)
 2. A database was created called `IGF_DB` (short for Indie Games Flaunt database)
-3. 
+3. Inside this database, a collection called 'IGF_COLL was created. This collection stores all of the documents that represent each game in the database.
+4. The connection string was copied from the 'connections' screen on the MongoDB website.
+5. The connection string was hard coded into the `app.py` file.
+6. In the network setting dialog on the MongoDB website, a 'whitelist' IP adress of `0.0.0.0/0` was assigned to the database - this allows outside traffic (such as Heroku) to have access to the database.
 
-Theme
+**Database setup (deployment)**
 
-As the website is to be used to host video games and is to be used by persons who are interested in video games, it was decided that the look and feel of the website should be inspired by video games and their history. Fonts chosen evoke 80's computer aesthetic.
+1. In order for the database to be secure for deployment, the hard coded connection string was removed.
+2. The connection string was added to the hosts enviornment variable (in this case Heroku)
+3. The application was set to read the connection string from the hosts enviornment variable. Deployment with this method means that the password and username of the database is not exposed to the public.
 
-Color scheme
+## Theme ##
+
+As the website is to be used to host video games and is to be used by persons who are interested in video games, it was decided that the look and feel of the website should be inspired by video games and their history. The text fonts chosen wel selected because they evoke 80's computer aesthetic.
+
+**Color scheme**
 
 The color palette below is that of the Nintendo Entertainment system. From this palette, five colours were chosen to be used throughout the site. This palette was chosen in the hopes of evoking a 80's/90's video game feel.
-
-http://www.thealmightyguru.com/Games/Hacking/Wiki/index.php/NES_Palette
 
 ![](img/readme_img/palette_nes.png)
 
 Image 12. Color palette from the Nintendo Entertainment System
 
-The website Coolors was used to generate a five color palette based on the nes palette above.
+The website 'Coolors' was used to generate a five color palette based on the nes palette above.
 
 ![](img/readme_img/palette_final.png)
 
 Image 13. Final chosen palette
 
-Features
+## Features ##
 
-Carousel of cards
+**Carousel of cards**
 
 On the main screen all games are displayed on an interactive carousel containing cards that have short description and screen shot. The cards contain a button that will link the user to a more detailed description of the game. The carousel can be scrolled by clicking the left and right arrows on top of and below the carousel. The arrows are implemented twice in order to allow better user experience of mobile users who would otherwise have needed to scroll to the top of the screen every time that want to change a slide.
 
-Share a game
+**Share a game**
 
 Users can click the share button and enter the details of a game they wish to share with the community.
 
-Promote the site on social media
+**Social media links**
 
-At the bottom of the main page there are links to common social media websites. These can be used to promote the website.
+The website contains links to the Indie Games Flaunt social media pages.
 
-Responsive design
+**Responsive design**
 
 The website works on both mobile and desktop devices meaning the largest possible target audience can be obtained.
 
-Random game
+**Random game**
 
 The random game button on the main screen sends the user to a dedicated game screen of a random game contained in the database.
 
-Edit a game description
+**Edit a game description**
 
 On the dedicated game page for every game, the user can click the edit button to allow them to change the details of any games in the database.
 
-Delete a game from the database
+**Delete a game from the database**
 
 A user can select a game and from its dedicated page, press the delete button to remove it from the database.
 
-Features Left to Implement
+**Features left to implement**
 
-*allow only users who submitted a game to edit it. As it stands, any user can edit any submitted game. Study <spencer recommendation> to gain knowledge of how to do this.
-
-*implement "honey pot" and other authentication procedures to ensure the website cannot be abused by web bots and spammed.
-
-*allow users to upload their own screenshot from their personal computers as opposed to only allowing them to use urls for the sharing of screenshots.
-
-*The use of cards within a carousel caused some problems during development. Due to the fact that the cards are by default, flexible, there exists a problem where the images contained inside the cards can be different sizes. In a future update, the cards would be much better presented if they were fixed size.
-
-*Even with the low colour count on the palette used, the addition of screenshots during development caused a somewhat saturated look to emerge on the website. In future builds, experimenting with a more limited palette may bring about more aesthetically pleasing results.
-
-*The buttons for the carousel are not responsive at the moment, this needs to be fixed.
-
-*need to test what happens if two games with the same name are entered
-
-*Currently, the category pages are seperate HTML files for each of the four categories, these could be refactored into one page to cut down on the source code size.
+- Implement user profiles giving each user an account with the website. This will allow much more robust functionality such as games only being edited by the user who submitted that game.
+- Implement authentication. At present, there is no authentication on the forms. This means that a user can submit a game with some fields missing such as a title.
+- Implement a feature that allows users to upload their own screenshots of games. At present, the site is limited to only allowing url's of images already uploaded to be used.
+- Images should be fixed to a certain size to allow more uniform page layouts.
+- The buttons that progress the carousel are not responsive at the moment, this needs to be fixed.
+- The four categories of games currently have their own HTML file. The websites codebase would be more maintainable if these pages used a base HTML file.
+- A confirm dialog should be implemented for when users click the delete button.
 
 # Technologies Used #
 
 **Flask**
 
+The Flask web application framework was used for the development of the site. Flask allows the use of Python to dynamically build web pages. It also features a simple server that allowed convenient testing of the site locally during development.
+
+Flask link:
+
+[https://www.palletsprojects.com/p/flask/](https://www.palletsprojects.com/p/flask/)
+
 **Gunicorn**
+
+Although Flask has its own built in web server, it is rather limited. Gunicorn is a web server specifically designed to work with the Python language. Use of Gunicorn greatly reduced the complexity of deploying the website on Heroku.
+
+Gunicorn link:
+
+[https://gunicorn.org/](https://gunicorn.org/)
+
+**MongoDB**
+
+MongoDB is a database solution that stores data in the form of 'documents'. Each document contains an unique id number and can hold any number of fields of many different types of data such as text and numbers. It was used in this application to hold data on each game such as developer information and screenshots.
+
+MongoDB link:
+
+[https://www.mongodb.com/](https://www.mongodb.com/)
+
+**Heroku**
+
+Used to host the deployed website so that it is accessible to the outside world.
+
+Heroku link:
+
+[https://www.heroku.com/](https://www.heroku.com/)
 
 ## Font Awesome ##
 
@@ -284,7 +315,27 @@ Odibee Sans link:
 
 # Testing #
 
-The website was tested on various devices with a number of different screen sizes and operating systems. The website was found to be well responsive in all tests.
+The website was tested on various devices with a number of different screen sizes and operating systems. The website was found to respond well in all tests. Below are some images of various devices tested.
+
+![](img/readme_img/test_pixelx2.png)
+
+Image xxx. Running on a Pixelx2 device (emulated)
+
+![](img/readme_img/test_iphone5.png)
+
+Image xxx. Running on an IPhone5 device (emulated)
+
+![](img/readme_img/test_androidtab_portrait.jpg)
+
+Image xxx. Running on an Android tablet in portrait screen orientation
+
+![](img/readme_img/test_androidtab_landscape.jpg)
+
+Image xxx. Running on an Android tablet in landscape screen orientation
+
+![](img/readme_img/test_androidphone.jpg)
+
+Image xxx. Running on an Android phone
 
 **Other tests**
 
@@ -359,11 +410,44 @@ The website was tested on various devices with a number of different screen size
 
 **Test 7 - Editing a game (no changes made)**
 
+1. Go to the main page
+2. Click on the Action category.
+3. Click on the first game in the Action category.
+4. Click the edit button
+5. Once in the edit screen, note the values in each field
+6. Now click the Home button
+7. Again, click the Action category and again click the first game listed
+8. The values should not have changed since last viewed
+
 **Test 8 - Editing a game (changes made)**
+
+1. Go to the main page
+2. Click on the Puzzle category.
+3. Click on the first game in the Puzzle category.
+4. Click the edit button
+5. Once in the edit screen, note the value of the 'title' field
+6. Change the value in the title field to 'New Title'
+7. Click the edit button. You will be redirected to the main page.
+8. From the main page, click the Puzzle category and again click the first game listed
+9. The title of the game should now be 'New Title'
 
 **Tests 8, 9, 10 - Social media links**
 
+1. Go to the main page
+2. Click the Facebook icon
+3. A new tab should open with the address for the Facebook website
+4. Close the Facebook tab and return to the main page
+5. From the main page, click the 'Sports' category
+6. From the Sports page, click the Instagram Icon
+7. A new tab should open with the address for the Instagram website
+8. Close the instagram tab and return to the main page
+9. From the main page, cick the random game button
+10. From the page that opens up, click the Twitter icon
+11. A new tab should open with the address for the Twitter website
+
 **Test 11 - Responsivness**
+
+Run the website on multiple devices, the website should respond depending on the screen size of the various devices (see the images of this test under the Testing heading)
 
 **Test 12, 13 - Feedback**
 
@@ -406,6 +490,8 @@ It is not uncommon in the indie games scene for two or more games to share the s
 6. The two games should be visible.
 7. Click on each game and ensure they show that they were developed by different developers.
 
+## Deployment ##
+
 **Deployment (web)**
 
 The following steps were taken to deploy the website online:
@@ -422,5 +508,18 @@ The following steps were taken to deploy the website online:
 **Deployment (local)**
 
 In order to deploy this website on a local machine, the following steps would need to be taken:
-1. 
+
+1. A MongoDB database and collection would need to be created.
+2. This databases connection string would need to be copied from the MongoDB website by navigating to the connection string tab.
+3. Edit this connection string by replacing `<password>` with your own password and replacing `test` with the name of the database created in step 1.
+4. Edit the following line in app.py: `app.config["MONGO_URI"] = os.getenv("MONGO_URI")`
+replace the text after the `=` with the modified connection string from step 3.
+5. Open a command window and set the `FLASK_APP` enviornment variable to `app.py` by running the following command: `set FLASK_APP=app.py`
+6. Now run Flask's built in server by typing the command `flask run`
+7. The website will now be available on the local host address `127.0.0.1:5000`
+8. Initially, the website will not show any games. This is because the database is empty. Click the Share Game button to begin adding games.
+
+## Credits ##
+
+Thanks to the Code Institute team & mentor's Spencer Barriball & Simen Daehlin. Thanks also to Code Institute student Anna Greaves.
 
