@@ -319,23 +319,23 @@ The website was tested on various devices with a number of different screen size
 
 ![](img/readme_img/test_pixelx2.png)
 
-Image xxx. Running on a Pixelx2 device (emulated)
+Image 14. Running on a Pixelx2 device (emulated)
 
 ![](img/readme_img/test_iphone5.png)
 
-Image xxx. Running on an IPhone5 device (emulated)
+Image 15. Running on an IPhone5 device (emulated)
 
 ![](img/readme_img/test_androidtab_portrait.jpg)
 
-Image xxx. Running on an Android tablet in portrait screen orientation
+Image 16. Running on an Android tablet in portrait screen orientation
 
 ![](img/readme_img/test_androidtab_landscape.jpg)
 
-Image xxx. Running on an Android tablet in landscape screen orientation
+Image 17. Running on an Android tablet in landscape screen orientation
 
 ![](img/readme_img/test_androidphone.jpg)
 
-Image xxx. Running on an Android phone
+Image 18. Running on an Android phone
 
 **Other tests**
 
@@ -351,19 +351,19 @@ Image xxx. Running on an Android phone
 2. Click the "Puzzle" link in the navbar.
 3. The user should be directed to a page containing a list of all the games that are stored under the category "puzzle".
 
-**Test 2 - Sports link**
+**Test 3 - Sports link**
 
 1. Go to the main page.
 2. Click the "Sports" link in the navbar.
 3. The user should be directed to a page containing a list of all the games that are stored under the category "sports".
 
-**Test 2 - Educational link**
+**Test 4 - Educational link**
 
 1. Go to the main page.
 2. Click the "Educational" link in the navbar.
 3. The user should be directed to a page containing a list of all the games that are stored under the category "educational".
 
-**Test 3 - Random button**
+**Test 5 - Random button**
 
 1. Go to the main page.
 2. Click the "Random" button.
@@ -372,7 +372,7 @@ Image xxx. Running on an Android phone
 5. Again click the random button.
 6. The user should be again directed to a page containing all of the details of another game stored in the database.
 
-**Test 4 - Share button**
+**Test 6 - Share button**
 
 1. Go to the main page.
 2. Click the "Share" button.
@@ -380,7 +380,7 @@ Image xxx. Running on an Android phone
 4. Click the "home" button.
 5. The user should be directed to the main page and no information should have been added to the database.
 
-**Test 5 - Sharing a game**
+**Test 7 - Sharing a game**
 
 1. Go to the main page.
 2. Click the "Share" button.
@@ -391,14 +391,14 @@ Image xxx. Running on an Android phone
 7. Click the category of game entered in step 4 on the navbar.
 8. The game that was entered should now be visible on the bottom of the list in the category page.
 
-**Test 6 - Deleting a game**
+**Test 8 - Deleting a game**
 
 1. Select a game from the main page.
 2. Click the delete button.
 3. The user should be directed to the main page. From here, confirm that the game delted in the previous step has in fact been deleted.
 4. The game should not be available for viewing.
 
-**Test X - Navigation**
+**Test 9 - Navigation**
 
 1. Go to the main page
 2. Click the link on the navbar entitles 'Action'
@@ -408,7 +408,7 @@ Image xxx. Running on an Android phone
 6. Click the link on the navbar entitles 'Puzzle'
 7. The user should be redirected to the page that contains all of the games in the Puzzle category
 
-**Test 7 - Editing a game (no changes made)**
+**Test 10 - Editing a game (no changes made)**
 
 1. Go to the main page
 2. Click on the Action category.
@@ -419,7 +419,7 @@ Image xxx. Running on an Android phone
 7. Again, click the Action category and again click the first game listed
 8. The values should not have changed since last viewed
 
-**Test 8 - Editing a game (changes made)**
+**Test 11 - Editing a game (changes made)**
 
 1. Go to the main page
 2. Click on the Puzzle category.
@@ -431,7 +431,7 @@ Image xxx. Running on an Android phone
 8. From the main page, click the Puzzle category and again click the first game listed
 9. The title of the game should now be 'New Title'
 
-**Tests 8, 9, 10 - Social media links**
+**Tests 12, 13, 14 - Social media links**
 
 1. Go to the main page
 2. Click the Facebook icon
@@ -445,17 +445,17 @@ Image xxx. Running on an Android phone
 10. From the page that opens up, click the Twitter icon
 11. A new tab should open with the address for the Twitter website
 
-**Test 11 - Responsivness**
+**Test 15 - Responsivness**
 
 Run the website on multiple devices, the website should respond depending on the screen size of the various devices (see the images of this test under the Testing heading)
 
-**Test 12, 13 - Feedback**
+**Test 16, 17 - Feedback**
 
 1. Go to the main page.
 2. Hover the mouse over the links in the navbar, the social media links in the footer as well as the buttons in the jumbotron.
 3. All of these elements should respond to the users hover. The links should grow larger whilst hovered over and the buttons should change colour whilst hovered over.
 
-**Test 14 - User experience**
+**Test 18 - User experience**
 
 This test involved the participation of volunteers. The aim was to determine if the user interface was intuitive to a casual user.
 
@@ -463,7 +463,7 @@ The first volunteer was asked to navigate to the Action category using an IPhone
 
 The second user was asked to select a random game by using the random button on the main page using a desktop computer. They were then asked to edit the title of that game by using the edit button. The user completed the task with relative ease but did  report that the text on the edit screen was hard to read. This test resulted in the darkening of text on the edit screen.
 
-**Test X - Entering games with identical names**
+**Test 19 - Entering games with identical names**
 
 It is not uncommon in the indie games scene for two or more games to share the same name. This test was designed to ensure the website would be able to handle such a situation.
 
